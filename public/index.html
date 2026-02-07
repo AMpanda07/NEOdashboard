@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>ASTROCITY | Guardians NEO Watch</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <canvas id="starCanvas"></canvas>
+
+    <!-- Navigation -->
+    <header id="nav">
+        <div class="flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+            <div class="logo-orb transition group-hover:scale-110">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="flex flex-col leading-none">
+                <span class="logo-text">ASTROCITY</span>
+                <span class="logo-tagline">Guardians NEO Watch</span>
+            </div>
+        </div>
+
+        <div class="input-nav hidden lg:flex">
+            <button class="value-nav" onclick="window.scrollToPortal('researcher')">
+                <i class="fas fa-user-graduate"></i>
+                <span>Crew Profile</span>
+            </button>
+            <button class="value-nav" onclick="window.scrollToPortal('agent')">
+                <i class="fas fa-shield-alt"></i>
+                <span>Ship Access</span>
+            </button>
+            <button class="value-nav" onclick="window.toggleAppearance()">
+                <i class="fas fa-eye"></i>
+                <span id="appearanceLabel">HUD Mode</span>
+            </button>
+        </div>
+
+        <div>
+            <button onclick="window.scrollToAuth()" class="px-5 py-2 border border-white/20 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">
+                Access Gateways
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div id="statusBadge" class="mb-8 inline-flex items-center gap-3 bg-white/5 border border-white/10 px-5 py-2 rounded-full backdrop-blur-md">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span class="text-xs uppercase font-black tracking-[0.2em] text-gray-300 font-mono">Guardian Net Active</span>
+        </div>
+
+        <h1 class="hero-title animate-fade-in">ASTROCITY</h1>
+        
+        <p class="mt-8 text-gray-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light px-4">
+            Guardians-grade <span class="text-white font-semibold">Near-Earth Object (NEO)</span> monitoring and
+            <span class="text-cyan-300 font-semibold">Risk Analysis</span> command deck.
+            Tracking celestial threats using NASA's NeoWs telemetry.
+        </p>
+
+        <div class="mt-12 flex flex-col sm:flex-row gap-5">
+            <button onclick="window.scrollToNews()" class="group bg-white text-black px-10 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-xl flex items-center justify-center gap-2">
+                Launch Tracking <i class="fas fa-radar ml-2 group-hover:rotate-12 transition-transform"></i>
+            </button>
+            <button onclick="window.scrollToAuth()" class="px-10 py-4 border border-white/20 rounded-xl font-bold uppercase tracking-widest hover:bg-white/10 transition backdrop-blur-sm">
+                Researcher Login
+            </button>
+        </div>
+
+        <div class="absolute bottom-10 animate-bounce opacity-50">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Intelligence Feed -->
+    <section id="news" class="py-24 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b border-white/10 pb-8">
+                <div>
+                    <div class="text-purple-300 font-mono text-xs tracking-widest uppercase mb-2">Daily Intelligence Briefing</div>
+                    <h2 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter">NEO Hazard Feed</h2>
+                    <p class="text-gray-300 mt-2 font-light">Real-time close approach data. Objects classified by the <span class="text-cyan-300 font-semibold">Risk Analysis Engine</span>.</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-mono font-bold" id="currentDateDisplay">Loading Date...</div>
+                    <div class="text-xs text-gray-300 uppercase tracking-widest mt-1">NASA Jet Propulsion Laboratory Link</div>
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="neoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Content injected via JS -->
+                <div class="col-span-full py-32 text-center flex flex-col items-center justify-center">
+                    <i class="fas fa-satellite-dish fa-spin text-4xl text-gray-400 mb-4"></i>
+                    <p class="font-mono text-gray-300 uppercase tracking-widest">Establishing Satellite Uplink...</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-xs text-gray-300 uppercase tracking-widest font-mono">Displaying Top 6 Closest Approaches for Today</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auth Portals -->
+    <section id="auth" class="py-24 bg-black/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-4">Secure Access Gateways</h2>
+                <p class="text-gray-300 max-w-lg mx-auto">Select your clearance level to access the full ASTROCITY defense grid.</p>
+            </div>
+
+            <div class="flex flex-wrap lg:flex-nowrap gap-8 justify-center">
+                
+                <!-- Agent Portal -->
+                <div id="portal-agent" class="auth-portal glass-card" style="--accent-primary: #9333ea;">
+                    <div class="absolute top-0 right-0 p-4 opacity-20"><i class="fas fa-shield-virus text-8xl"></i></div>
+                    <div class="relative z-10">
+                        <div class="icon-orb icon-orb--purple mb-6"><i class="fas fa-user-secret"></i></div>
+                        <h3 class="text-2xl font-black uppercase italic tracking-tight mb-2">Tactical Agent</h3>
+                        <p class="text-sm text-gray-300 mb-8 h-10">Restricted access for Planetary Defense Officers.</p>
+                        <form onsubmit="window.handleAuth(event, 'AGENT')" class="space-y-4">
+                            <div>
+                                <label class="text-[10px] font-mono uppercase text-gray-400 tracking-widest">Badge ID</label>
+                                <input type="text" placeholder="CW-AGT-882" class="auth-input">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-mono uppercase text-gray-400 tracking-widest">Neural Pass</label>
+                                <input type="password" placeholder="••••••••" class="auth-input">
+                            </div>
+                            <button type="submit" class="btn-action mt-4">Initialize Uplink</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Researcher Portal -->
+                <div id="portal-researcher" class="auth-portal glass-card" style="--accent-primary: #3b82f6;">
+                    <div class="absolute top-0 right-0 p-4 opacity-20"><i class="fas fa-atom text-8xl"></i></div>
+                    <div class="relative z-10">
+                        <div class="icon-orb icon-orb--blue mb-6"><i class="fas fa-microscope"></i></div>
+                        <h3 class="text-2xl font-black uppercase italic tracking-tight mb-2">Research Fellow</h3>
+                        <p class="text-sm text-gray-300 mb-8 h-10">Public access for astronomers and university partners.</p>
+                        <form onsubmit="window.handleAuth(event, 'RESEARCHER')" class="space-y-4">
+                            <div>
+                                <label class="text-[10px] font-mono uppercase text-gray-400 tracking-widest">Institution Email</label>
+                                <input type="email" placeholder="dr.smith@university.edu" class="auth-input">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-mono uppercase text-gray-400 tracking-widest">Access Code</label>
+                                <input type="password" placeholder="••••••••" class="auth-input">
+                            </div>
+                            <button type="submit" class="btn-action bg-blue-600 hover:bg-blue-500 mt-4">Verify Credentials</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-white/10 bg-black text-center md:text-left">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center opacity-60">
+            <div class="mb-4 md:mb-0">
+                <div class="font-black text-xl italic uppercase">ASTROCITY</div>
+                <div class="text-[10px] font-mono uppercase tracking-widest mt-1">Guardians Defense Initiative • Est. 2026</div>
+            </div>
+            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#" class="hover:text-purple-400">API Docs</a>
+                <a href="#" class="hover:text-purple-400">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

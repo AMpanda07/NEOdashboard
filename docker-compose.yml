@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: cosmic-watch-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/cosmicwatch
+    depends_on:
+      - mongo
+    networks:
+      - cosmic-net
+
+  mongo:
+    image: mongo:latest
+    container_name: cosmic-watch-db
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - cosmic-net
+
+networks:
+  cosmic-net:
+    driver: bridge
+
+volumes:
+  mongo-data:

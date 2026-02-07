@@ -1,0 +1,7 @@
+[00:00:03.368] Server  LOG     ✓ Ready in 2.5s
+[00:00:11.169] Server  WARN    ⚠ Cross origin request detected from 10.25.220.71 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:11.247] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:09.740] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:01:21.296] Browser ERROR   {"response":"{\"code\":\"INVALID_TOKEN\",\"message\":\"Invalid access token\"}","responseHeaders":{"content-type":"application/json"},"statusCode":401}
+[00:04:28.098] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

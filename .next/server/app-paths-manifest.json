@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/neos/route": "app/api/neos/route.js",
+  "/api/register/route": "app/api/register/route.js",
+  "/api/watchlist/route": "app/api/watchlist/route.js",
+  "/feed/page": "app/feed/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/register/page": "app/register/page.js",
+  "/risk/page": "app/risk/page.js"
+}

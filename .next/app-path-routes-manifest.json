@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/auth/[...nextauth]/route": "/api/auth/[...nextauth]",
+  "/api/neos/route": "/api/neos",
+  "/api/register/route": "/api/register",
+  "/api/watchlist/route": "/api/watchlist",
+  "/feed/page": "/feed",
+  "/login/page": "/login",
+  "/page": "/",
+  "/register/page": "/register",
+  "/risk/page": "/risk"
+}
