@@ -37,3 +37,45 @@ This repository contains the complete source code for the backend API and fronte
 
 ## 🧠 System Architecture
 
+
+- Frontend communicates **only** with the backend  
+- Backend handles all NASA API requests  
+- External data is processed before visualization  
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- HTML, CSS, JavaScript
+- React (for MERN version)
+- Tailwind CSS
+
+### Backend
+- Node.js
+- Express
+- Axios
+
+### Database
+- MongoDB
+
+### External API
+- NASA Near-Earth Object Web Service (NeoWs)
+
+### Deployment
+- Docker
+- Docker Compose
+
+---
+
+## 📦 Project Structure
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/AMpanda07/NEOdashboard.git
+cd NEOdashboard
